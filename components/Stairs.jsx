@@ -26,19 +26,21 @@ const Stairs = () => {
     each div will have the same animation defined by the stairsAnimation object. 
     the delay got each div is calculated sinamically bsed on it's reversed index creating a stronger effect with decresing delay for each subsecquebse step  */}
       {[...Array(6)].map((_, index) => {
-        <motion.div
-          key={index}
-          variants={stairAnimation}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          transition={{
-            duration: 0.4,
-            ease: "easeInput",
-            delay: reverseIndex(index) * 0.1,
-          }}
-          className="h-full w-full bg-white relative"
-        />;
+        return (
+          <motion.div
+            key={index}
+            variants={stairAnimation}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              duration: 0.4,
+              ease: "easeInput",
+              delay: reverseIndex(index) * 0.1,
+            }}
+            className="h-full w-full bg-white relative"
+          />
+        );
       })}
     </>
   );
