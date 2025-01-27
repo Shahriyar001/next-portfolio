@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
@@ -17,7 +18,9 @@ const Header = () => {
             <button className="btn btn-primary">Hire me</button>
           </Link>
         </div>
-        <div className="xl:hidden ">mobile nav</div>
+        <div className="xl:hidden ">
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
