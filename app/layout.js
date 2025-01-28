@@ -10,10 +10,10 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["100", "200", "300", "400", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-jetbrainsMono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-jetbrainsMono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -23,9 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${jetbrainsMono.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${jetbrainsMono.variable}  antialiased`}>
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
