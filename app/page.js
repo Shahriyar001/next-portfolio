@@ -4,6 +4,7 @@ import { MdOutlineFileDownload } from "react-icons/md";
 
 import React from "react";
 import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
@@ -44,6 +45,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Stats />
     </section>
   );
 };
