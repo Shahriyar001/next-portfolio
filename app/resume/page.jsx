@@ -24,7 +24,7 @@ import { delay, motion } from "framer-motion";
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, laboriosam.",
+    "Passionate MERN stack developer with a strong foundation in web development. Experienced in building scalable applications, optimizing performance, and delivering high-quality code.",
   info: [
     {
       fieldName: "Name",
@@ -61,25 +61,25 @@ const about = {
   ],
 };
 
-const Courses = {
+const courses = {
   icon: <FaLaptopCode />,
-  title: "Complete Courses",
+  title: "Completed Courses",
   description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam omnis natus accusantium?",
+    "Hands-on experience with MERN stack, JavaScript mastery, and full-stack development through structured online programs and real-world projects.",
   items: [
     {
-      academy: "Programing Hero",
+      academy: "Programming Hero",
       course: "Next Level Web Development",
       duration: "2024-2025",
     },
     {
-      academy: "Programing Hero",
-      course: "Mern Stack Development",
+      academy: "Programming Hero",
+      course: "MERN Stack Development",
       duration: "2023-2024",
     },
     {
-      academy: "Learn with sumit",
-      course: "javascript mastery",
+      academy: "Learn with Sumit",
+      course: "JavaScript Mastery",
       duration: "2023-2023",
     },
   ],
@@ -87,13 +87,13 @@ const Courses = {
 
 const education = {
   icon: <FaGraduationCap />,
-  title: "Field of Expertise",
+  title: "Education Background",
   description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam omnis natus accusantium?",
+    "Pursuing a BBA degree while mastering web development. Strong analytical and problem-solving skills with a keen interest in tech-driven business solutions.",
   items: [
     {
       institution: "Dhaka College",
-      degree: "BBA(Management)",
+      degree: "BBA (Management)",
       duration: "2021-2025",
     },
     {
@@ -105,25 +105,25 @@ const education = {
 };
 
 const skills = {
-  title: "My Skills",
+  title: "Technical Skills",
   description:
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, ipsa!",
+    "Proficient in front-end and back-end technologies. Experienced in React, Next.js, Node.js, and database management. Passionate about clean code and best practices.",
   skills: [
     {
       icon: <FaHtml5 />,
-      name: "HTMl 5",
+      name: "HTML 5",
     },
     {
       icon: <FaCss3 />,
-      name: "Css 3",
+      name: "CSS 3",
     },
     {
       icon: <FaJs />,
-      name: "Javascript",
+      name: "JavaScript",
     },
     {
       icon: <FaReact />,
-      name: "Reat.js",
+      name: "React.js",
     },
     {
       icon: <SiNextdotjs />,
@@ -135,7 +135,7 @@ const skills = {
     },
     {
       icon: <SiTailwindcss />,
-      name: "Tailwindcss",
+      name: "Tailwind CSS",
     },
     {
       icon: <FaNodejs />,
@@ -163,15 +163,45 @@ const Resume = () => {
           defaultValue="Skills"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full mx-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px]  mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="courses">Courses</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About</TabsTrigger>
           </TabsList>
           <div className="min-h-[70vh] w-full">
+            <TabsContent value="courses" className="w-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{courses.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {courses.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul>
+                    {courses.items.map((item, index) => {
+                      return (
+                        <li>
+                          <span>{item.duration}</span>
+                          <h3>{item.course}</h3>
+                          <div>
+                            <span></span>
+                            <p>{item.academy}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+            <TabsContent value="education" className="w-full">
+              Education
+            </TabsContent>
             <TabsContent value="skills" className="w-full">
               Skills
+            </TabsContent>
+            <TabsContent value="about" className="w-full">
+              About
             </TabsContent>
           </div>
         </Tabs>
