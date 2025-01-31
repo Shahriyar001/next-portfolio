@@ -267,13 +267,17 @@ const Resume = () => {
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
-                        <TooltipProvider>
+                        <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger>
-                              <div>{skill.icon}</div>
+                              <div className="text-6xl group-hover:text-green-300 transition-all duration-300">
+                                {skill.icon}
+                              </div>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p>{skill.name}</p>
+                              <p className="bg-white text-primary p-2 rounded rounded-md">
+                                {skill.name}
+                              </p>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
