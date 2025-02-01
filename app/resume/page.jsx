@@ -16,6 +16,9 @@ import {
   SiNextdotjs,
   SiReaddotcv,
   SiRedux,
+  SiMongodb,
+  SiDocker,
+  SiTypescript,
 } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -143,6 +146,10 @@ const skills = {
       name: "JavaScript",
     },
     {
+      icon: <SiTypescript />,
+      name: "Typescript ",
+    },
+    {
       icon: <FaReact />,
       name: "React.js",
     },
@@ -163,6 +170,15 @@ const skills = {
       name: "Node.js",
     },
     {
+      icon: <SiMongodb />,
+      name: "MongoDB",
+    },
+    {
+      icon: <SiDocker />,
+      name: "Docker",
+    },
+
+    {
       icon: <FaFigma />,
       name: "Figma",
     },
@@ -181,7 +197,7 @@ const Resume = () => {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="Skills"
+          defaultValue="skills"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px]  mx-auto xl:mx-0 gap-6">
@@ -190,7 +206,7 @@ const Resume = () => {
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About</TabsTrigger>
           </TabsList>
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[70vh] w-full pb-10">
             <TabsContent value="courses" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{courses.title}</h3>
@@ -263,19 +279,19 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4 ">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                               <div className="text-6xl group-hover:text-green-300 transition-all duration-300">
                                 {skill.icon}
                               </div>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p className="bg-white text-primary p-2 rounded rounded-md">
+                              <p className="bg-white text-primary font-bold p-2 capitalize rounded-md">
                                 {skill.name}
                               </p>
                             </TooltipContent>
@@ -287,8 +303,25 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              About
+            {/* about  */}
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div>
+                <h3>{about.title}</h3>
+                <p>{about.description}</p>
+                <ul>
+                  {about.info.map((item) => {
+                    return (
+                      <li key={index}>
+                        <span>{item.fieldName}</span>
+                        <span>{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>
