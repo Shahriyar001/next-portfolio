@@ -13,6 +13,7 @@ import {
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 // const project = [
 //   {
@@ -107,7 +108,7 @@ const Work = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none ">
+          <div className="w-full xl:w-[35%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none ">
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
@@ -118,7 +119,7 @@ const Work = () => {
                 {project.category} project
               </h2>
               <p className="text-white/60 text-sm">{project.description}</p>
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
@@ -158,7 +159,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
+          <div className="w-full xl:w-[65%]">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -169,7 +170,7 @@ const Work = () => {
                 return (
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 ">
-                      <div className="absolute top-4 bottom-0 w-full h-full"></div>
+                      <div className="absolute top-4 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
@@ -182,18 +183,11 @@ const Work = () => {
                   </SwiperSlide>
                 );
               })}
+              <WorkSliderBtns
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="bg-green-300 hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all "
+              />
             </Swiper>
-          </div>
-          <div>
-            {/* <Link>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <BsArrowUpRight />
-                  </TooltipTrigger>
-                </Tooltip>
-              </TooltipProvider>
-            </Link> */}
           </div>
         </div>
       </div>
