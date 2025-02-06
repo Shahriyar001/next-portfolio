@@ -32,6 +32,7 @@ const info = [
 
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
@@ -67,18 +68,36 @@ const Contact = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    {/* <SelectLabel>Select a service</SelectLabel> */}
+                    <SelectLabel>Select a service</SelectLabel>
                     <SelectItem value="est">Frontend Development</SelectItem>
                     <SelectItem value="cst">Backend Development</SelectItem>
                     <SelectItem value="nst">Fullstack Development</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              <Textarea
+                className="h-[200px]"
+                placeholder="Type your message here."
+              />
+              {/* btn  */}
+              <Button size="md" className="max-w-40 py-3">
+                Send Message
+              </Button>
             </form>
           </div>
           {/* info */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            info
+            <ul>
+              {info.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <div>
+                      <div>{item.icon}</div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
