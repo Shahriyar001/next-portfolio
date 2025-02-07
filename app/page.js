@@ -26,10 +26,16 @@ const Home = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="hover:bg-green-300 uppercase flex items-center gap-2"
+                className="hover:bg-green-300 uppercase "
               >
-                <span>Download Resume</span>
-                <MdOutlineFileDownload className="text-xl" />
+                <a
+                  href="/ShahriyarMahbub-resume.pdf"
+                  download="ShahriyarMahbub_Resume.pdf"
+                  className="flex items-center gap-2"
+                >
+                  <span>Download Resume</span>
+                  <MdOutlineFileDownload className="text-xl" />
+                </a>
               </Button>
               <div className="mb-8 xl:mb-0">
                 <Socials

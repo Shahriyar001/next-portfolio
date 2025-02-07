@@ -50,8 +50,9 @@ const projects = [
       { name: "MongoDB" },
     ],
     image: "/carhub.png",
-    live: "",
-    github: "",
+    live: "https://car-showcase-three-henna.vercel.app/",
+    github: "https://github.com/Shahriyar001/car-showcase",
+    server: "https://github.com/Shahriyar001/car-showcase",
   },
   {
     num: "02",
@@ -68,11 +69,88 @@ const projects = [
       { name: "Express.js" },
     ],
     image: "/skatch.png",
-    live: "",
-    github: "",
+    live: "https://skatch-book.web.app/",
+    github: "https://github.com/Shahriyar001/skatch-book",
+    server: "https://github.com/Shahriyar001/skatchbook-server",
   },
   {
     num: "03",
+    category: "full-stack",
+    title: "Food Flow",
+    description:
+      "A Restaurant management system that enables table bookings, customers reviews, and separate user/admin dashboards.",
+    stack: [
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Daisy UI" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "MongoDB" },
+    ],
+    image: "/food.png",
+    live: "https://food-flow-de6d0.web.app/",
+    github: "https://github.com/Shahriyar001/food-flow-client",
+    server: "https://github.com/Shahriyar001/food-flow-server",
+  },
+  {
+    num: "04",
+    category: "full-stack",
+    title: "Joystick Junction",
+    description:
+      "A reselling e-commerce website where users can buy and sell used gaming products with different functionalities for buyers, sellers, and admins.",
+    stack: [
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "Framer-motion" },
+      { name: "Tanstack-query" },
+      { name: "MongoDB" },
+    ],
+    image: "/joy.png",
+    live: "https://gaming-gears-resale.web.app/",
+    github: "https://github.com/Shahriyar001/gaming-gears-client",
+    server: "https://github.com/Shahriyar001/gaming-gears-server",
+  },
+  {
+    num: "05",
+    category: "front-end",
+    title: "Flovoro Foods",
+    description:
+      "A Restaurant management system that enables table bookings, customers reviews, and separate user/admin dashboards.",
+    stack: [
+      { name: "React.js" },
+      { name: "Redux" },
+      { name: "Tailwind" },
+      { name: "Daisy UI" },
+    ],
+    image: "/flaver.png",
+    live: "https://flavoro-clone.web.app/",
+    github: "https://github.com/Shahriyar001/flavoro-clone",
+    server: "https://github.com/Shahriyar001/flavoro-clone",
+  },
+  {
+    num: "06",
+    category: "full-stack",
+    title: "Northern Lights University",
+    description:
+      "An educational website providing students with information, campus images, events, and a live contact page with an embedded map.",
+    stack: [
+      { name: "Next.js" },
+      { name: "React.js" },
+      { name: "Tailwind" },
+      { name: "Daisy UI" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "TypeScript" },
+    ],
+    image: "/north.png",
+    live: "https://university-qeducato.vercel.app/",
+    github: "https://github.com/Shahriyar001/university-qeducato",
+    server: "https://github.com/Shahriyar001/university-qeducato",
+  },
+  {
+    num: "7",
     category: "full-stack",
     title: "Hasan Dental Care",
     description:
@@ -86,8 +164,9 @@ const projects = [
       { name: "MongoDB" },
     ],
     image: "/hasan.png",
-    live: "",
-    github: "",
+    live: "https://hasan-dental-care.web.app/",
+    github: "https://github.com/Shahriyar001/hasan-dental-care",
+    server: "https://github.com/Shahriyar001/hasan-dental-server",
   },
 ];
 
@@ -145,6 +224,18 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
                 <Link href={project.github}>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsGithub className="text-white text-3xl group-hover:text-accent " />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Github repository</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+                <Link href={project.server}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
